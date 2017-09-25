@@ -1,11 +1,11 @@
 //Include Server Dependencies
-var express = require("express");
-var bodyParser = require("body-parser");
-var logger = require("morgan");
+const express = require("express");
+const bodyParser = require("body-parser");
+const logger = require("morgan");
 
 //Create Instances of express
-var app = express();
-var PORT = process.env.PORT || 3000;
+const app = express();
+const PORT = process.env.PORT || 3000;
 
 //Run Morgan for Logging
 app.use(logger("dev"));
@@ -20,12 +20,12 @@ app.use(express.static("./public"));
 //*********************************************
 
 //MongoDB configuration (Change this URL to your own DB)
-var Articles = require("./models/articles.js");
-var mongoose = require("mongoose");
-var uri = process.env.MONGODB_URI || "mongodb: //localhost/nytmern";
+const Articles = require("./models/articles.js");
+const mongoose = require("mongoose");
+const uri = process.env.MONGODB_URI || "mongodb: //localhost/nytmern";
 mongoose.connect(uri); //This is to connect locally
 
-var db = mongoose.connection;
+const db = mongoose.connection;
 db.on("error", (err) => {
   console.log("Mongoose Error: ", err);
 });
@@ -48,7 +48,7 @@ app.get("/api", (req, res) => {
 });
 
 app.post("/api/", (req, res) => {
-  var newArticle = new Articles(req.body);
+  const newArticle = new Articles(req.body);
   console.log(req.body);
 
   newArticle.save((err, doc) => {
