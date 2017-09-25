@@ -16,5 +16,4 @@ module.exports = (
 
   //High Level component is the Main component
   <Route path = "/" component={Main}>
-    {}
 );
