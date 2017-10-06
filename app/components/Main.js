@@ -79,45 +79,44 @@ var Main = React.createClass({
 
 					<div className="jumbotron text-center">
 						<h2>New York Times MERN Stack Article Search App</h2>
-						<p><em>Search for and annotate articles of interest!</em></p>
 						{/* <a href="#/info"><button className="btn btn-default">Info</button></a>
 						<a href="#/chat"><button className="btn btn-default">Comments</button></a> */}
 					</div>
 
 					<div className="row">
-                              <div className="col-lg-12">
-                                   <div className="panel panel-default">
-                                        <div className="panel-heading">
-                                             <h3 className="panel-title text-center">Search</h3>
-                                        </div>
-                                        <div className="panel-body">
-                                        <form>
-                                             <div className="form-group">
-                                                  <h4 className="text-center"><strong>Topic</strong></h4>
+	          <div className="col-lg-12">
+	               <div className="panel panel-default">
+	                    <div className="panel-heading">
+	                         <h3 className="panel-title text-center">Search</h3>
+	                    </div>
+	                    <div className="panel-body">
+	                    <form>
+	                         <div className="form-group">
+	                              <h4 className="text-center"><strong>Topic</strong></h4>
 
-                                                  {/*Note how each of the form elements has an id that matches the state. This is not necessary but it is convenient.
-                                                       Also note how each has an onChange event associated with our handleChange event.
-                                                  */}
-                                                  <input type="text" className="form-control text-center" id="search_term" onChange= {this.handleChange} required/>
-                                                  <br />
-                                                  <h4 className="text-center"><strong>Enter a Start Date (YYYYMMDD)</strong></h4>
-                                                  <input type="text" className="form-control text-center" id="begin_year" onChange= {this.handleChange} required/>
-                                                  <br />
-                                                  <h4 className="text-center"><strong>Enter an End Date (YYYYMMDD)</strong></h4>
-                                                  <input type="text" className="form-control text-center" id="end_year" onChange= {this.handleChange} required/>
-                                                  <br />
-                                                  <button type="button" className="btn btn-primary btn-block text-center" onClick={this.handleClick}>Search</button>
-                                             </div>
-                                        </form>
-                                        </div>
-                                   </div>
-                              </div>
+	                              {/*Note how each of the form elements has an id that matches the state. This is not necessary but it is convenient.
+	                                   Also note how each has an onChange event associated with our handleChange event.
+	                              */}
+	                              <input type="text" className="form-control text-center" id="search_term" onChange= {this.handleChange} required/>
+	                              <br />
+	                              <h4 className="text-center"><strong>Enter a Start Date (YYYYMMDD)</strong></h4>
+	                              <input type="text" className="form-control text-center" id="begin_year" onChange= {this.handleChange} required/>
+	                              <br />
+	                              <h4 className="text-center"><strong>Enter an End Date (YYYYMMDD)</strong></h4>
+	                              <input type="text" className="form-control text-center" id="end_year" onChange= {this.handleChange} required/>
+	                              <br />
+	                              <button type="button" className="btn btn-primary btn-block text-center" onClick={this.handleClick}>Search</button>
+	                         </div>
+	                    </form>
+	                    </div>
+	               </div>
+	          </div>
 					</div>
 
 					<div className="row">
 
 						{/*Added this.props.children to dump all of the child components into place*/}
-                              <Results results0={this.state.results0} results1={this.state.results1} results2={this.state.results2} results3={this.state.results3} results4={this.state.results4} url0={this.state.url0} url1={this.state.url1} url2={this.state.url2} url3={this.state.url3} url4={this.state.url4}/>
+            <Results results0={this.state.results0} results1={this.state.results1} results2={this.state.results2} results3={this.state.results3} results4={this.state.results4} url0={this.state.url0} url1={this.state.url1} url2={this.state.url2} url3={this.state.url3} url4={this.state.url4}/>
 
 					</div>
 

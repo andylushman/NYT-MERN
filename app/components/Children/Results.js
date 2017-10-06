@@ -60,21 +60,26 @@ var Results = React.createClass({
 
 		return(
 
-                    <div className="col-lg-12">
-          			<div className="panel panel-default">
-          				<div className="panel-heading">
-          					<h3 className="panel-title text-center">Results</h3>
-          				</div>
-          				<div className="panel-body text-left">
-          						<h4><button style={buttonStyle} className="btn btn-success btn-lg" type="button" onClick={this.saveArticle} data-url={this.props.url0} data-title={this.props.results0}>Save</button><a style={articleStyle} href={this.props.url0} target="_blank" >{this.props.results0}</a></h4>
-                                        <h4><button style={buttonStyle} className="btn btn-success btn-lg" type="button" onClick={this.saveArticle} data-url={this.props.url1} data-title={this.props.results1}>Save</button><a style={articleStyle} href={this.props.url1} target="_blank" >{this.props.results1}</a></h4>
-                                        <h4><button style={buttonStyle} className="btn btn-success btn-lg" type="button" onClick={this.saveArticle} data-url={this.props.url2} data-title={this.props.results2}>Save</button><a style={articleStyle} href={this.props.url2} target="_blank" >{this.props.results2}</a></h4>
-                                        <h4><button style={buttonStyle} className="btn btn-success btn-lg" type="button" onClick={this.saveArticle} data-url={this.props.url3} data-title={this.props.results3}>Save</button><a style={articleStyle} href={this.props.url3} target="_blank" >{this.props.results3}</a></h4>
-                                        <h4><button style={buttonStyle} className="btn btn-success btn-lg" type="button" onClick={this.saveArticle} data-url={this.props.url4} data-title={this.props.results4}>Save</button><a style={articleStyle} href={this.props.url4} target="_blank" >{this.props.results4}</a></h4>
-          						{/* <p>{this.props.address}</p> */}
+          <div className="col-lg-12">
+    			<div className="panel panel-default">
+    				<div className="panel-heading">
+    					<h3 className="panel-title text-center">Results</h3>
+    				</div>
+    				<div className="panel-body text-left">
 
-          				</div>
-          			</div>
+              <h4><button style={buttonStyle} className="btn btn-success btn-lg" type="button" onClick={this.saveArticle} data-url={this.props.url0} data-title={this.props.results0}>Save</button><a style={articleStyle} href={this.props.url0} target="_blank" >{this.props.results0}</a></h4>
+
+              <h4><button style={buttonStyle} className="btn btn-success btn-lg" type="button" onClick={this.saveArticle} data-url={this.props.url1} data-title={this.props.results1}>Save</button><a style={articleStyle} href={this.props.url1} target="_blank" >{this.props.results1}</a></h4>
+
+              <h4><button style={buttonStyle} className="btn btn-success btn-lg" type="button" onClick={this.saveArticle} data-url={this.props.url2} data-title={this.props.results2}>Save</button><a style={articleStyle} href={this.props.url2} target="_blank" >{this.props.results2}</a></h4>
+
+              <h4><button style={buttonStyle} className="btn btn-success btn-lg" type="button" onClick={this.saveArticle} data-url={this.props.url3} data-title={this.props.results3}>Save</button><a style={articleStyle} href={this.props.url3} target="_blank" >{this.props.results3}</a></h4>
+
+              <h4><button style={buttonStyle} className="btn btn-success btn-lg" type="button" onClick={this.saveArticle} data-url={this.props.url4} data-title={this.props.results4}>Save</button><a style={articleStyle} href={this.props.url4} target="_blank" >{this.props.results4}</a></h4>
+  						{/* <p>{this.props.address}</p> */}
+
+    				</div>
+    			</div>
 
                     <div className="row">
 

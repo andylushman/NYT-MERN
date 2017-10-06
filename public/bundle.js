@@ -25466,165 +25466,156 @@
 	var helpers = __webpack_require__(245);
 
 	var Main = React.createClass({
-	     displayName: 'Main',
+		displayName: 'Main',
 
-	     // Here we set a generic state associated with the number of click
+		// Here we set a generic state associated with the number of click
 
-	     getInitialState: function getInitialState() {
-	          return {
-	               search_term: "",
-	               begin_year: "19900701",
-	               end_year: "20000701"
-	          };
-	     },
+		getInitialState: function getInitialState() {
+			return {
+				search_term: "",
+				begin_year: "19900701",
+				end_year: "20000701"
+			};
+		},
 
-	     handleChange: function handleChange(event) {
+		handleChange: function handleChange(event) {
 
-	          // Here we create syntax to capture any change in text to the query terms (pre-search).
-	          // See this Stack Overflow answer for more details:
-	          // http://stackoverflow.com/questions/21029999/react-js-identifying-different-inputs-with-one-onchange-handler
-	          var newState = {};
-	          newState[event.target.id] = event.target.value;
-	          this.setState(newState);
-	     },
+			// Here we create syntax to capture any change in text to the query terms (pre-search).
+			// See this Stack Overflow answer for more details:
+			// http://stackoverflow.com/questions/21029999/react-js-identifying-different-inputs-with-one-onchange-handler
+			var newState = {};
+			newState[event.target.id] = event.target.value;
+			this.setState(newState);
+		},
 
-	     // If the component changes (i.e. if a search is entered)...handleClick
-	     handleClick: function handleClick() {
-	          // Run the query for the address
-	          helpers.runQuery(this.state.search_term, this.state.begin_year, this.state.end_year).then(function (data) {
-	               //console.log(data);
-	               //var string = JSON.stringify(data);
-	               this.setState({ results0: data[0][0] });
-	               this.setState({ results1: data[1][0] });
-	               this.setState({ results2: data[2][0] });
-	               this.setState({ results3: data[3][0] });
-	               this.setState({ results4: data[4][0] });
-	               this.setState({ url0: data[0][1] });
-	               this.setState({ url1: data[1][1] });
-	               this.setState({ url2: data[2][1] });
-	               this.setState({ url3: data[3][1] });
-	               this.setState({ url4: data[4][1] });
-	               //console.log(this.state.results0);
-	               //console.log(this.state.results1);
-	               // this.setState({resultsTitle0: data[0].title, resultsurl0: data[0].url, resultsDate0: data[0].date});
-	               // this.setState({resultsTitle1: data[1].title, resultsurl1: data[1].url, resultsDate1: data[1].date});
-	               // this.setState({resultsTitle2: data[2].title, resultsurl2: data[2].url, resultsDate2: data[2].date});
-	               // this.setState({resultsTitle3: data[3].title, resultsurl3: data[3].url, resultsDate3: data[3].date});
-	               // this.setState({resultsTitle4: data[4].title, resultsurl4: data[4].url, resultsDate4: data[4].date});
-	               // If it does, then update the clickcount in MongoDB
-	               //{title: this.state.results0, url: this.state.url0}
+		// If the component changes (i.e. if a search is entered)...handleClick
+		handleClick: function handleClick() {
+			// Run the query for the address
+			helpers.runQuery(this.state.search_term, this.state.begin_year, this.state.end_year).then(function (data) {
+				//console.log(data);
+				//var string = JSON.stringify(data);
+				this.setState({ results0: data[0][0] });
+				this.setState({ results1: data[1][0] });
+				this.setState({ results2: data[2][0] });
+				this.setState({ results3: data[3][0] });
+				this.setState({ results4: data[4][0] });
+				this.setState({ url0: data[0][1] });
+				this.setState({ url1: data[1][1] });
+				this.setState({ url2: data[2][1] });
+				this.setState({ url3: data[3][1] });
+				this.setState({ url4: data[4][1] });
+				//console.log(this.state.results0);
+				//console.log(this.state.results1);
+				// this.setState({resultsTitle0: data[0].title, resultsurl0: data[0].url, resultsDate0: data[0].date});
+				// this.setState({resultsTitle1: data[1].title, resultsurl1: data[1].url, resultsDate1: data[1].date});
+				// this.setState({resultsTitle2: data[2].title, resultsurl2: data[2].url, resultsDate2: data[2].date});
+				// this.setState({resultsTitle3: data[3].title, resultsurl3: data[3].url, resultsDate3: data[3].date});
+				// this.setState({resultsTitle4: data[4].title, resultsurl4: data[4].url, resultsDate4: data[4].date});
+				// If it does, then update the clickcount in MongoDB
+				//{title: this.state.results0, url: this.state.url0}
 
-	               //console.log(string);
-	          }.bind(this)); /*.then(function(data) {
-	                         }.bind(this))*/
-	     },
+				//console.log(string);
+			}.bind(this)); /*.then(function(data) {
+	                 }.bind(this))*/
+		},
 
-	     // Here we render the component
-	     render: function render() {
+		// Here we render the component
+		render: function render() {
 
-	          return React.createElement(
-	               'div',
-	               { className: 'container' },
-	               React.createElement(
-	                    'div',
-	                    { className: 'row' },
-	                    React.createElement(
-	                         'div',
-	                         { className: 'jumbotron text-center' },
-	                         React.createElement(
-	                              'h2',
-	                              null,
-	                              'New York Times MERN Stack Article Search App'
-	                         ),
-	                         React.createElement(
-	                              'p',
-	                              null,
-	                              React.createElement(
-	                                   'em',
-	                                   null,
-	                                   'Search for and annotate articles of interest!'
-	                              )
-	                         )
-	                    ),
-	                    React.createElement(
-	                         'div',
-	                         { className: 'row' },
-	                         React.createElement(
-	                              'div',
-	                              { className: 'col-lg-12' },
-	                              React.createElement(
-	                                   'div',
-	                                   { className: 'panel panel-default' },
-	                                   React.createElement(
-	                                        'div',
-	                                        { className: 'panel-heading' },
-	                                        React.createElement(
-	                                             'h3',
-	                                             { className: 'panel-title text-center' },
-	                                             'Search'
-	                                        )
-	                                   ),
-	                                   React.createElement(
-	                                        'div',
-	                                        { className: 'panel-body' },
-	                                        React.createElement(
-	                                             'form',
-	                                             null,
-	                                             React.createElement(
-	                                                  'div',
-	                                                  { className: 'form-group' },
-	                                                  React.createElement(
-	                                                       'h4',
-	                                                       { className: 'text-center' },
-	                                                       React.createElement(
-	                                                            'strong',
-	                                                            null,
-	                                                            'Topic'
-	                                                       )
-	                                                  ),
-	                                                  React.createElement('input', { type: 'text', className: 'form-control text-center', id: 'search_term', onChange: this.handleChange, required: true }),
-	                                                  React.createElement('br', null),
-	                                                  React.createElement(
-	                                                       'h4',
-	                                                       { className: 'text-center' },
-	                                                       React.createElement(
-	                                                            'strong',
-	                                                            null,
-	                                                            'Enter a Start Date (YYYYMMDD)'
-	                                                       )
-	                                                  ),
-	                                                  React.createElement('input', { type: 'text', className: 'form-control text-center', id: 'begin_year', onChange: this.handleChange, required: true }),
-	                                                  React.createElement('br', null),
-	                                                  React.createElement(
-	                                                       'h4',
-	                                                       { className: 'text-center' },
-	                                                       React.createElement(
-	                                                            'strong',
-	                                                            null,
-	                                                            'Enter an End Date (YYYYMMDD)'
-	                                                       )
-	                                                  ),
-	                                                  React.createElement('input', { type: 'text', className: 'form-control text-center', id: 'end_year', onChange: this.handleChange, required: true }),
-	                                                  React.createElement('br', null),
-	                                                  React.createElement(
-	                                                       'button',
-	                                                       { type: 'button', className: 'btn btn-primary btn-block text-center', onClick: this.handleClick },
-	                                                       'Search'
-	                                                  )
-	                                             )
-	                                        )
-	                                   )
-	                              )
-	                         )
-	                    ),
-	                    React.createElement(
-	                         'div',
-	                         { className: 'row' },
-	                         React.createElement(Results, { results0: this.state.results0, results1: this.state.results1, results2: this.state.results2, results3: this.state.results3, results4: this.state.results4, url0: this.state.url0, url1: this.state.url1, url2: this.state.url2, url3: this.state.url3, url4: this.state.url4 })
-	                    )
-	               )
-	          );
-	     }
+			return React.createElement(
+				'div',
+				{ className: 'container' },
+				React.createElement(
+					'div',
+					{ className: 'row' },
+					React.createElement(
+						'div',
+						{ className: 'jumbotron text-center' },
+						React.createElement(
+							'h2',
+							null,
+							'New York Times MERN Stack Article Search App'
+						)
+					),
+					React.createElement(
+						'div',
+						{ className: 'row' },
+						React.createElement(
+							'div',
+							{ className: 'col-lg-12' },
+							React.createElement(
+								'div',
+								{ className: 'panel panel-default' },
+								React.createElement(
+									'div',
+									{ className: 'panel-heading' },
+									React.createElement(
+										'h3',
+										{ className: 'panel-title text-center' },
+										'Search'
+									)
+								),
+								React.createElement(
+									'div',
+									{ className: 'panel-body' },
+									React.createElement(
+										'form',
+										null,
+										React.createElement(
+											'div',
+											{ className: 'form-group' },
+											React.createElement(
+												'h4',
+												{ className: 'text-center' },
+												React.createElement(
+													'strong',
+													null,
+													'Topic'
+												)
+											),
+											React.createElement('input', { type: 'text', className: 'form-control text-center', id: 'search_term', onChange: this.handleChange, required: true }),
+											React.createElement('br', null),
+											React.createElement(
+												'h4',
+												{ className: 'text-center' },
+												React.createElement(
+													'strong',
+													null,
+													'Enter a Start Date (YYYYMMDD)'
+												)
+											),
+											React.createElement('input', { type: 'text', className: 'form-control text-center', id: 'begin_year', onChange: this.handleChange, required: true }),
+											React.createElement('br', null),
+											React.createElement(
+												'h4',
+												{ className: 'text-center' },
+												React.createElement(
+													'strong',
+													null,
+													'Enter an End Date (YYYYMMDD)'
+												)
+											),
+											React.createElement('input', { type: 'text', className: 'form-control text-center', id: 'end_year', onChange: this.handleChange, required: true }),
+											React.createElement('br', null),
+											React.createElement(
+												'button',
+												{ type: 'button', className: 'btn btn-primary btn-block text-center', onClick: this.handleClick },
+												'Search'
+											)
+										)
+									)
+								)
+							)
+						)
+					),
+					React.createElement(
+						'div',
+						{ className: 'row' },
+						React.createElement(Results, { results0: this.state.results0, results1: this.state.results1, results2: this.state.results2, results3: this.state.results3, results4: this.state.results4, url0: this.state.url0, url1: this.state.url1, url2: this.state.url2, url3: this.state.url3, url4: this.state.url4 })
+					)
+				)
+			);
+		}
 	});
 
 	// These variables will hold the results we get from the user's inputs via HTML
