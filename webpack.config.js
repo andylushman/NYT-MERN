@@ -1,22 +1,24 @@
 module.exports = {
-  //This code will be compiled
+
+  // This code will be compiled
   entry: "./app/App.js",
 
-  //Then output into this file
+  // Then output into this file
   output: {
-    filename: "./public/bundle.js"
+    filename: "public/bundle.js"
   },
 
-  //This will be waht we do
+
+  // This will be what we do
   module: {
     loaders: [
       {
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
-        loader: "babel-loader",
+        loader: 'babel',
         query: {
-          //These are the specific transformations we'll be using.
-          presets: ["react", "es2015"]
+          // These are the specific transformations we'll be using.
+          presets: ['react', 'es2015']
         }
       }
     ]
