@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var axios = require('axios');
 // Include React
 var React = require('react');
@@ -5,6 +6,15 @@ var React = require('react');
 // This is the results component
 var Saved = React.createClass({
      getInitialState: function(){
+=======
+const axios = require("axios");
+// Include React
+const React = require(="react");
+
+// This is the results component
+const Saved = React.createClass({
+     getInitialState: () => {
+>>>>>>> bf9ec629952ee34126e80e2bb93ac2b2232aa977
 		return {
 
 		}
@@ -24,7 +34,11 @@ var Saved = React.createClass({
      //     }.bind(this))
      // },
 	// Here we render the function
+<<<<<<< HEAD
 	render: function(){
+=======
+	render: () => {
+>>>>>>> bf9ec629952ee34126e80e2bb93ac2b2232aa977
 
 		return(
                <div className="col-lg-12">

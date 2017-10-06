@@ -1,4 +1,5 @@
 // Include React
+<<<<<<< HEAD
 var React = require('react');
 var axios = require('axios');
 
@@ -20,23 +21,57 @@ var Saved = require('./Saved');
 var Results = React.createClass({
 
      getInitialState: function(){
+=======
+const React = require("react");
+const axios = require("axios");
+
+const buttonStyle = {
+  marginRight: "20px",
+  marginLeft: "10px",
+  clear: "both",
+  marginBottom: "10px"
+};
+
+const articleStyle = {
+  display: "inline-block",
+  minWidth: '500px'
+};
+
+const Saved = require("./Saved");
+
+// This is the results component
+const Results = React.createClass({
+
+     getInitialState: () => {
+>>>>>>> bf9ec629952ee34126e80e2bb93ac2b2232aa977
 		return {
 			title: "",
 			url: ""
 		}
 	},
 
+<<<<<<< HEAD
      saveArticle: function(event){
           var theurl = event.currentTarget.dataset.url
           var thetitle =event.currentTarget.dataset.title
+=======
+     saveArticle: (event) => {
+          const theurl = event.currentTarget.dataset.url
+          const thetitle =event.currentTarget.dataset.title
+>>>>>>> bf9ec629952ee34126e80e2bb93ac2b2232aa977
           this.setState({title: thetitle});
           this.setState({url: theurl});
           axios.post('/api', {title: thetitle, url: theurl})
          .then(function(results){
               console.log("Posted to MongoDB");
          })
+<<<<<<< HEAD
          axios.get('/api')
         .then(function(results){
+=======
+         axios.get("/api")
+        .then((results) => {
+>>>>>>> bf9ec629952ee34126e80e2bb93ac2b2232aa977
             console.log("secretword" + JSON.stringify(results));
            this.setState({title0: results.data[0].title});
            this.setState({url0: results.data[0].url});
@@ -56,17 +91,26 @@ var Results = React.createClass({
       }.bind(this))
 	},
 	// Here we render the function
+<<<<<<< HEAD
 	render: function(){
 
 		return(
 
                     <div className="col-lg-12">
+=======
+	render: () => {
+
+		return(
+
+              <div className="col-lg-12">
+>>>>>>> bf9ec629952ee34126e80e2bb93ac2b2232aa977
           			<div className="panel panel-default">
           				<div className="panel-heading">
           					<h3 className="panel-title text-center">Results</h3>
           				</div>
           				<div className="panel-body text-left">
           						<h4><button style={buttonStyle} className="btn btn-success btn-lg" type="button" onClick={this.saveArticle} data-url={this.props.url0} data-title={this.props.results0}>Save</button><a style={articleStyle} href={this.props.url0} target="_blank" >{this.props.results0}</a></h4>
+<<<<<<< HEAD
                                         <h4><button style={buttonStyle} className="btn btn-success btn-lg" type="button" onClick={this.saveArticle} data-url={this.props.url1} data-title={this.props.results1}>Save</button><a style={articleStyle} href={this.props.url1} target="_blank" >{this.props.results1}</a></h4>
                                         <h4><button style={buttonStyle} className="btn btn-success btn-lg" type="button" onClick={this.saveArticle} data-url={this.props.url2} data-title={this.props.results2}>Save</button><a style={articleStyle} href={this.props.url2} target="_blank" >{this.props.results2}</a></h4>
                                         <h4><button style={buttonStyle} className="btn btn-success btn-lg" type="button" onClick={this.saveArticle} data-url={this.props.url3} data-title={this.props.results3}>Save</button><a style={articleStyle} href={this.props.url3} target="_blank" >{this.props.results3}</a></h4>
@@ -75,6 +119,16 @@ var Results = React.createClass({
 
           				</div>
           			</div>
+=======
+                        <h4><button style={buttonStyle} className="btn btn-success btn-lg" type="button" onClick={this.saveArticle} data-url={this.props.url1} data-title={this.props.results1}>Save</button><a style={articleStyle} href={this.props.url1} target="_blank" >{this.props.results1}</a></h4>
+                        <h4><button style={buttonStyle} className="btn btn-success btn-lg" type="button" onClick={this.saveArticle} data-url={this.props.url2} data-title={this.props.results2}>Save</button><a style={articleStyle} href={this.props.url2} target="_blank" >{this.props.results2}</a></h4>
+                        <h4><button style={buttonStyle} className="btn btn-success btn-lg" type="button" onClick={this.saveArticle} data-url={this.props.url3} data-title={this.props.results3}>Save</button><a style={articleStyle} href={this.props.url3} target="_blank" >{this.props.results3}</a></h4>
+                        <h4><button style={buttonStyle} className="btn btn-success btn-lg" type="button" onClick={this.saveArticle} data-url={this.props.url4} data-title={this.props.results4}>Save</button><a style={articleStyle} href={this.props.url4} target="_blank" >{this.props.results4}</a></h4>
+          						{/* <p>{this.props.address}</p> */}
+
+          			  </div>
+          		  </div>
+>>>>>>> bf9ec629952ee34126e80e2bb93ac2b2232aa977
 
                     <div className="row">
 

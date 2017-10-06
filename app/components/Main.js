@@ -1,4 +1,5 @@
 // Include React
+<<<<<<< HEAD
 var React = require('react');
 var axios = require('axios');
 // Included all of the React Router dependencies
@@ -17,6 +18,26 @@ var Main = React.createClass({
      // Here we set a generic state associated with the number of click
 
 	getInitialState: function(){
+=======
+const React = require("react");
+const axios = require("axios");
+// Included all of the React Router dependencies
+const ReactRouter = require("react-router");
+const Router = ReactRouter.Router;
+const Route = ReactRouter.Route;
+const IndexRoute = ReactRouter.IndexRoute;
+
+const Results = require("./Children/Results");
+const Saved = require("./Children/Saved");
+
+// Helper Function
+const helpers = require("../utils/helpers.js");
+
+const Main = React.createClass({
+     // Here we set a generic state associated with the number of clicks
+
+	getInitialState: () => {
+>>>>>>> bf9ec629952ee34126e80e2bb93ac2b2232aa977
 		return {
 			search_term: "",
 			begin_year: "19900701",
@@ -24,24 +45,41 @@ var Main = React.createClass({
 		}
 	},
 
+<<<<<<< HEAD
      handleChange: function(event){
+=======
+     handleChange: (event) => {
+>>>>>>> bf9ec629952ee34126e80e2bb93ac2b2232aa977
 
     	// Here we create syntax to capture any change in text to the query terms (pre-search).
     	// See this Stack Overflow answer for more details:
     	// http://stackoverflow.com/questions/21029999/react-js-identifying-different-inputs-with-one-onchange-handler
+<<<<<<< HEAD
     	var newState = {};
+=======
+    	const newState = {};
+>>>>>>> bf9ec629952ee34126e80e2bb93ac2b2232aa977
     	newState[event.target.id] = event.target.value;
     	this.setState(newState);
 
 	},
 
      // If the component changes (i.e. if a search is entered)...handleClick
+<<<<<<< HEAD
      handleClick: function(){
           // Run the query for the address
           helpers.runQuery(this.state.search_term, this.state.begin_year, this.state.end_year)
                .then(function(data){
                     //console.log(data);
                     //var string = JSON.stringify(data);
+=======
+     handleClick: () => {
+          // Run the query for the address
+          helpers.runQuery(this.state.search_term, this.state.begin_year, this.state.end_year)
+               .then((data) => {
+                    //console.log(data);
+                    //const string = JSON.stringify(data);
+>>>>>>> bf9ec629952ee34126e80e2bb93ac2b2232aa977
                     this.setState({results0: data[0][0]});
                     this.setState({results1: data[1][0]});
                     this.setState({results2: data[2][0]});
@@ -69,7 +107,11 @@ var Main = React.createClass({
      },
 
 	// Here we render the component
+<<<<<<< HEAD
 	render: function(){
+=======
+	render: () => {
+>>>>>>> bf9ec629952ee34126e80e2bb93ac2b2232aa977
 
 		return(
 
@@ -131,11 +173,19 @@ var Main = React.createClass({
 
 
 
+<<<<<<< HEAD
 // These variables will hold the results we get from the user's inputs via HTML
 // var queryTerm 	= "Iraq";
 // //var numArticles 	= 5;
 // var startYear 	= 1990;
 // var endYear = 2000;
+=======
+// These constiables will hold the results we get from the user's inputs via HTML
+// const queryTerm 	= "Iraq";
+// //const numArticles 	= 5;
+// const startYear 	= 1990;
+// const endYear = 2000;
+>>>>>>> bf9ec629952ee34126e80e2bb93ac2b2232aa977
 //
 //
 // helpers.runQuery(queryTerm, startYear, endYear);
