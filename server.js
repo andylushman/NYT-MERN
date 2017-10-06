@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // Include Server Dependencies
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -10,16 +9,6 @@ var logger = require('morgan');
 // Create Instance of Express
 var app = express();
 var PORT = process.env.PORT || 3000; // Sets an initial port. We'll use this later in our listener
-=======
-//Include Server Dependencies
-const express = require("express");
-const bodyParser = require("body-parser");
-const logger = require("morgan");
-
-//Create Instances of express
-const app = express();
-const PORT = process.env.PORT || 3000;
->>>>>>> bf9ec629952ee34126e80e2bb93ac2b2232aa977
 
 // Run Morgan for Logging
 app.use(logger('dev'));
@@ -33,7 +22,6 @@ app.use(express.static('./public'));
 
 // -------------------------------------------------
 
-<<<<<<< HEAD
 // MongoDB Configuration configuration (Change this URL to your own DB)
 var Articles = require('./models/articles.js');
 var mongoose = require('mongoose');
@@ -45,17 +33,6 @@ var db = mongoose.connection;
 //
 db.on('error', function (err) {
    console.log('Mongoose Error: ', err);
-=======
-//MongoDB configuration (Change this URL to your own DB)
-const Articles = require("./models/articles.js");
-const mongoose = require("mongoose");
-const uri = process.env.MONGODB_URI || "mongodb: //localhost/nytmern";
-mongoose.connect(uri); //This is to connect locally
-
-const db = mongoose.connection;
-db.on("error", (err) => {
-  console.log("Mongoose Error: ", err);
->>>>>>> bf9ec629952ee34126e80e2bb93ac2b2232aa977
 });
 //
 db.once('open', function () {
@@ -81,12 +58,6 @@ app.get('/api', function(req, res) {
     });
 });
 
-<<<<<<< HEAD
-=======
-app.post("/api/", (req, res) => {
-  const newArticle = new Articles(req.body);
-  console.log(req.body);
->>>>>>> bf9ec629952ee34126e80e2bb93ac2b2232aa977
 
 app.post('/api/', function(req, res){
        var newArticle = new Articles(req.body);

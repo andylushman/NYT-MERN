@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // Inclue the React library
 var React = require('react');
 
@@ -13,25 +12,10 @@ var IndexRoute	= Router.IndexRoute;
 var Main = require('../components/Main.js');
 //var Child1 = require('../components/Children/Saved');
 //var Child2 = require('../components/Children/Search');
-=======
-//Include the React library
-const React = require("react");
-
-//Include the Router
-const Router = require("react-router");
-const Route = Router.Route;
-
-//Include the Index Route (catch-all route)
-const IndexRoute = Router.IndexRoute;
-
-//Referance the high-level components
-const Main = require("../components/Main.js");
->>>>>>> bf9ec629952ee34126e80e2bb93ac2b2232aa977
 
 // Export the Routes
 module.exports = (
 
-<<<<<<< HEAD
 	/*High level component is the Main component*/
 	<Route path='/' component={Main}>
 
@@ -53,8 +37,4 @@ module.exports = (
 		{/* <IndexRoute component={Child1} /> */} */}
 
 	</Route>
-=======
-  //High Level component is the Main component
-  <Route path = "/" component={Main}>
->>>>>>> bf9ec629952ee34126e80e2bb93ac2b2232aa977
 );
