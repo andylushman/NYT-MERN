@@ -27,7 +27,6 @@ var Articles = require('./models/articles.js');
 var mongoose = require('mongoose');
 var uri = process.env.MONGODB_URI || 'mongodb://localhost/nytmern';
 mongoose.connect(uri);  //This is to connect locally
-//mongoose.connect("mongodb://heroku_mgk2lddj:3rptbp9oitsf16u3si1n68b7mc@ds019766.mlab.com:19766/heroku_mgk2lddj");  // This is to connect on Heroku
 
 var db = mongoose.connection;
 //
